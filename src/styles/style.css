@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+.nav__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: center;
+          flex-direction: center;
+}
+
+.nav__section img {
+  width: 100%;
+  max-width: 200px;
+}
+
+.nav__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav__menu li ~ li {
+  margin-left: 15px;
+}
+
+.nav__menu a {
+  color: #fff;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.42);
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 7px;
+  font-size: 12px;
+}
+
+.nav__menu a:hover {
+  background-color: #ef3a5d;
+}
+
+.header__banner {
+  background-image: url(../imgs/banner.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  max-height: 100%;
+  background-position-y: -95px;
+}
+
+.selection__section {
+  background-color: #fff;
+  width: 40%;
+  height: 350px;
+  border-radius: 20px;
+  margin: -180px auto;
+  opacity: 0.9;
+  padding: 40px 40px 0px 40px;
+  margin-bottom: 40px;
+}
+
+.selection__card {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.selection__card h1 {
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.66);
+  padding-bottom: 20px;
+}
+
+.selection__card h2 {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.42);
+  padding-bottom: 20px;
+}
+
+.selection__card div button {
+  padding: 5px 5px;
+  background-color: rgba(0, 0, 0, 0.66);
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-weight: lighter;
+}
+
+.selection__card div button ~ button {
+  margin-left: 15px;
+}
+
+.selection__card div button:hover {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.66);
+  font-weight: bold;
+}
+
+.selection__section:hover {
+  opacity: 1.0;
+}
+
+.footer__section {
+  bottom: 0;
+  padding: 10px 0;
+  font-size: 12px;
+  color: #fff;
+  background-color: #ef3a5d;
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */

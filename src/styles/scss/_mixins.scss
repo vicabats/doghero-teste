@@ -1,0 +1,19 @@
+//Button
+@mixin button($pd-y, $pd-x, $font-size, $font-color, $bg-color){
+    padding: $pd-y $pd-x;
+    background-color: $bg-color;
+    font-size: $font-size;
+    color: $font-color;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+//Display flex
+@mixin flex($justify-content, $direction){
+    display: flex;
+    align-items: center;
+    justify-content: $justify-content;
+    flex-direction: $direction;
+}

@@ -1,0 +1,49 @@
+.selection__section{
+    background-color: $white;
+    width: 40%;
+    height: 350px;
+    border-radius: 20px;
+    margin: -180px auto;
+    opacity: 0.9;
+    padding: $padding $padding 0px $padding;
+    margin-bottom: $padding;
+
+}
+
+.selection__card{
+    width: 80%;
+    margin: 0 auto;
+
+    h1{
+        font-size: $font-size-title;
+        color: $title-color;
+        padding-bottom: $padding/2;
+    }
+
+    h2{
+        font-size: $font-size-text;
+        color: $text-color;
+        padding-bottom: $padding/2;
+    }
+
+    div{
+        button{
+        @include button(5px, 5px, 16px, $white, $dark-grey);
+        font-weight: lighter;
+        }
+
+        button~button{
+            margin-left: 15px;
+        }
+
+        button:hover{
+            background-color: $white;
+            color: $dark-grey;
+            font-weight: bold;
+        }
+    }
+}
+
+.selection__section:hover{
+    opacity: 1.0;
+}
