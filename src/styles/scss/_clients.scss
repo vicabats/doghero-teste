@@ -1,0 +1,23 @@
+.clients__section{
+    background-image: url('../imgs/clients.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    max-height: 100%;
+    background-position-y: -300px;
+}
+
+.clients__buttons{
+    position: absolute;
+    bottom: 8%;
+    width: 100%;
+    
+    button{
+    @include button(10px, 5px, 16px, $white, $dark-grey);
+    font-weight: lighter;
+    }
+
+    button~button{
+        margin-left: 30px;
+    }
+}

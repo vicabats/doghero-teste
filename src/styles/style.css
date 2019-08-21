@@ -71,10 +71,10 @@ body {
   background-position-y: -95px;
 }
 
-.selection__section {
+.select__section {
   background-color: #fff;
   width: 40%;
-  height: 350px;
+  height: 250px;
   border-radius: 20px;
   margin: -180px auto;
   opacity: 0.9;
@@ -82,24 +82,24 @@ body {
   margin-bottom: 40px;
 }
 
-.selection__card {
+.select__card {
   width: 80%;
   margin: 0 auto;
 }
 
-.selection__card h1 {
+.select__card h1 {
   font-size: 24px;
   color: rgba(0, 0, 0, 0.66);
   padding-bottom: 20px;
 }
 
-.selection__card h2 {
+.select__card h2 {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.42);
   padding-bottom: 20px;
 }
 
-.selection__card div button {
+.select__card div button {
   padding: 5px 5px;
   background-color: rgba(0, 0, 0, 0.66);
   font-size: 16px;
@@ -111,26 +111,127 @@ body {
   font-weight: lighter;
 }
 
-.selection__card div button ~ button {
+.select__card div button ~ button {
   margin-left: 15px;
 }
 
-.selection__card div button:hover {
-  background-color: #fff;
+.select__card div button:hover {
   color: rgba(0, 0, 0, 0.66);
   font-weight: bold;
 }
 
-.selection__section:hover {
+.select__card div span {
+  color: #fff;
+}
+
+.select__section:hover {
   opacity: 1.0;
 }
 
 .footer__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: center;
+          flex-direction: center;
   bottom: 0;
   padding: 10px 0;
   font-size: 12px;
   color: #fff;
   background-color: #ef3a5d;
   width: 100%;
+  position: absolute;
+}
+
+.footer__section li {
+  list-style: none;
+  margin-left: 15px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.clientregister__section {
+  background-color: #fff;
+  opacity: 0.9;
+  width: 60%;
+  margin: 0 auto;
+  position: relative;
+  top: 20%;
+  border-radius: 20px;
+}
+
+.clientregister__section form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.clientregister__section form input {
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.clientregister__section form label {
+  color: rgba(0, 0, 0, 0.66);
+  font-weight: bold;
+}
+
+.submit-button {
+  padding: 5px 5px;
+  background-color: #ef3a5d;
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  width: 25%;
+  margin: 20px auto 0 auto;
+}
+
+.clients__section {
+  background-image: url("../imgs/clients.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  max-height: 100%;
+  background-position-y: -300px;
+}
+
+.clients__buttons {
+  position: absolute;
+  bottom: 8%;
+  width: 100%;
+}
+
+.clients__buttons button {
+  padding: 10px 5px;
+  background-color: rgba(0, 0, 0, 0.66);
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-weight: lighter;
+}
+
+.clients__buttons button ~ button {
+  margin-left: 30px;
 }
 /*# sourceMappingURL=style.css.map */

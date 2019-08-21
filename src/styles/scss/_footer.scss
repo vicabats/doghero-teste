@@ -1,8 +1,17 @@
 .footer__section{
+    @include flex(center, center);
     bottom: 0;
     padding: 10px 0;
     font-size: 12px;
     color: $link-color;
     background-color: $detail-color;
     width: 100%;
+    position: absolute;
+
+    li{
+        list-style: none;
+        margin-left: 15px;
+        color: $white;
+        font-size: 14px;
+    }
 }

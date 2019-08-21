@@ -1,7 +1,7 @@
-.selection__section{
+.select__section{
     background-color: $white;
     width: 40%;
-    height: 350px;
+    height: 250px;
     border-radius: 20px;
     margin: -180px auto;
     opacity: 0.9;
@@ -10,7 +10,7 @@
 
 }
 
-.selection__card{
+.select__card{
     width: 80%;
     margin: 0 auto;
 
@@ -37,13 +37,17 @@
         }
 
         button:hover{
-            background-color: $white;
             color: $dark-grey;
             font-weight: bold;
         }
+
+        span{
+            color: $white;
+        }
     }
+
 }
 
-.selection__section:hover{
+.select__section:hover{
     opacity: 1.0;
 }
