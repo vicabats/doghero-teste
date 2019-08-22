@@ -5,29 +5,35 @@ import '../styles/style.css';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import WalkersRegister from '../components/walkerspage/WalkersRegister';
+import ListWalkers from '../components/walkerspage/ListWalkers';
 
 class Walkers extends React.Component{
     constructor(){
         super()
 
         this.state={
-            WalkersRegister: false,
+            walkersRegister: false,
+            listWalkers: false,
         }
     }
 
     showWalkersRegister = () => {
-        this.setState({WalkersRegister: true})
+        this.setState({walkersRegister: true})
+    }
+
+    showListWalkers = () => {
+        this.setState({listWalkers: true})
     }
 
     render(){
         return(
             <section>
-                <header className="clients__section">
+                <header className="walkers__section">
                     <Nav />
-                    {this.state.clientRegister ? <WalkersRegister /> : null }
+                    {this.state.walkersRegister ? <WalkersRegister /> : null || this.state.listWalkers ? <ListWalkers /> : null}
                     <div className="clients__buttons">
-                        <button onClick={this.showWalkersRegister}>Cadastre-se</button>
-                        <button>Conheça alguns de nossos clientes</button>
+                        <button onClick={this.showWalkersRegister}>Seja um passeador</button>
+                        <button onClick={this.showListWalkers}>Conheça alguns de nossos passeadores</button>
                     </div>
                 </header>
                 <Footer />

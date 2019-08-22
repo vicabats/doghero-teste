@@ -204,6 +204,93 @@ body {
   margin: 20px auto 0 auto;
 }
 
+.listclients__section {
+  background-color: #fff;
+  opacity: 0.9;
+  width: 60%;
+  margin: 0 auto;
+  position: relative;
+  top: 20%;
+  border-radius: 20px;
+}
+
+.listclients__section h1 {
+  color: rgba(0, 0, 0, 0.66);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.walkers__section {
+  background-image: url("../imgs/walkers.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  max-height: 100%;
+  background-position-y: -1005px;
+}
+
+.walkersregister__section {
+  background-color: #fff;
+  opacity: 0.9;
+  width: 60%;
+  margin: 0 auto;
+  position: relative;
+  top: 20%;
+  border-radius: 20px;
+}
+
+.walkersregister__section form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.walkersregister__section form input {
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.walkersregister__section form label {
+  color: rgba(0, 0, 0, 0.66);
+  font-weight: bold;
+}
+
+.submit-button {
+  padding: 5px 5px;
+  background-color: #ef3a5d;
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  width: 25%;
+  margin: 20px auto 0 auto;
+}
+
+.listclients__section {
+  background-color: #fff;
+  opacity: 0.9;
+  width: 60%;
+  margin: 0 auto;
+  position: relative;
+  top: 20%;
+  border-radius: 20px;
+}
+
+.listclients__section h1 {
+  color: rgba(0, 0, 0, 0.66);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 .clients__section {
   background-image: url("../imgs/clients.jpg");
   background-size: cover;

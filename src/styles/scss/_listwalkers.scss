@@ -1,0 +1,15 @@
+.listwalkers__section{
+    background-color: $white;
+    opacity: 0.9;
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    top: 20%;
+    border-radius: 20px;
+
+    h1{
+        color: $title-color;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}

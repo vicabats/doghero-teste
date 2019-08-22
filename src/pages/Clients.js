@@ -5,6 +5,7 @@ import '../styles/style.css';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import ClientRegister from '../components/clientpage/ClientRegister.js';
+import ListClients from '../components/clientpage/ListClients';
 
 class Clients extends React.Component{
     constructor(){
@@ -12,23 +13,28 @@ class Clients extends React.Component{
 
         this.state={
             clientRegister: false,
+            clientList: false,
         }
     }
 
     showClientRegister = () => {
-        this.setState({clientRegister: true})
+        this.setState({clientRegister: !this.clientRegister})
+    }
+
+    showClientList = () => {
+        this.setState({clientList: !this.clientList})
     }
 
 
     render(){
         return(
             <section>
-                <header className="client__section">
+                <header className="clients__section">
                     <Nav />
-                    {this.state.clientRegister ? <ClientRegister /> : null }
-                    <div className="client__buttons">
+                    {this.state.clientRegister ? <ClientRegister /> : null || this.state.clientList ? <ListClients /> : null}
+                    <div className="clients__buttons">
                         <button onClick={this.showClientRegister}>Cadastre-se</button>
-                        <button>Conheça alguns de nossos clientes</button>
+                        <button onClick={this.showClientList}>Conheça alguns de nossos clientes</button>
                     </div>
                 </header>
                 <Footer />

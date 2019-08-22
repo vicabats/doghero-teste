@@ -1,0 +1,33 @@
+.walkersregister__section{
+    background-color: $white;
+    opacity: 0.9;
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    top: 20%;
+    border-radius: 20px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: 0 auto;
+        padding: $padding;
+
+        input{
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        label{
+            color: $dark-grey;
+            font-weight: bold;
+        }
+    }
+}
+
+.submit-button{
+    @include button(5px, 5px, 14px, $white, $cherry);
+    width: 25%;
+    margin: 20px auto 0 auto;
+}
