@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import '../styles/style.css';
 
 //Importando componentes
@@ -13,28 +14,38 @@ class Clients extends React.Component{
 
         this.state={
             clientRegister: false,
-            clientList: false,
+            clientList: [],
         }
     }
 
-    showClientRegister = () => {
-        this.setState({clientRegister: !this.clientRegister})
+    showClientRegisterCard = () => {
+        this.setState({clientRegister: !this.state.clientRegister})
+        console.log(this.state.clientRegister)
     }
 
-    showClientList = () => {
-        this.setState({clientList: !this.clientList})
+    getClients = () => {
+        axios.get(`http://localhost:8080/api/clients`)
+        .then((res) => {
+            console.log(res.data)
+            this.setState({clientList: res.data})
+        })
+        .catch(error => {
+            console.log(error)
+        })
+        console.log(this.state.clientList)
     }
-
 
     render(){
         return(
             <section>
                 <header className="clients__section">
                     <Nav />
-                    {this.state.clientRegister ? <ClientRegister /> : null || this.state.clientList ? <ListClients /> : null}
+                    <ListClients clientList={this.state.clientList}
+                    />
+                    {this.state.clientRegister ? <ClientRegister /> : null}
                     <div className="clients__buttons">
-                        <button onClick={this.showClientRegister}>Cadastre-se</button>
-                        <button onClick={this.showClientList}>Conheça alguns de nossos clientes</button>
+                        <button onClick={this.showClientRegisterCard}>Cadastre-se</button>
+                        <button onClick={this.getClients}>Conheça alguns de nossos clientes</button>
                     </div>
                 </header>
                 <Footer />

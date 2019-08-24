@@ -18,11 +18,11 @@ class Walkers extends React.Component{
     }
 
     showWalkersRegister = () => {
-        this.setState({walkersRegister: true})
+        this.setState({walkersRegister: !this.state.walkersRegister})
     }
 
     showListWalkers = () => {
-        this.setState({listWalkers: true})
+        this.setState({listWalkers: !this.state.listWalkers})
     }
 
     render(){

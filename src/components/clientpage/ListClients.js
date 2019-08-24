@@ -1,12 +1,18 @@
 import React from 'react';
 import '../../styles/style.css';
 
-function ListClients(){
-    return(
-        <section className="listclients__section">
-            <h1>Aqui terá um map da API na parte de clientes e mostrará uma lista com todos os clientes cadastrados e um botão para ver os seus cachorrros.</h1>
-        </section>
-    )
-}
+
+//Importação do componente de cada cliente
+import List from './List';
+
+const ListClients = ({clientList}) => (
+    <section className="listclients__section">
+        {clientList.map(list => (
+            <List clientList={list}
+            />
+        ))}  
+        {console.log(clientList)}      
+    </section>
+)
 
 export default ListClients;
