@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/style.css';
+import axios from 'axios';
 
 //Importando componentes
 import Nav from '../components/Nav';
@@ -13,16 +14,36 @@ class Walkers extends React.Component{
 
         this.state={
             walkersRegister: false,
-            listWalkers: false,
+            walkerList: [],
         }
     }
 
-    showWalkersRegister = () => {
-        this.setState({walkersRegister: !this.state.walkersRegister})
+    getWalkers = () => {
+        axios.get(`http://localhost:8080/api/walkers`)
+        .then((res) => {
+            console.log(res.data)
+            this.setState({walkerList: res.data})
+        })
+        .catch(error => {
+            console.log(error)
+        })
     }
 
-    showListWalkers = () => {
-        this.setState({listWalkers: !this.state.listWalkers})
+    setWalker = () => {
+        this.setState({walkersRegister: !this.state.walkersRegister});
+        axios.post(`http://localhost:8080/api/walkers`, {
+            name: '',
+            phone: '',
+            cpf: '',
+            email: '',
+            address: ''   
+        })
+        .then((res) => {
+            console.log(res)
+        })
+        .catch(error => {
+            console.log(error)
+        })
     }
 
     render(){
@@ -31,9 +52,11 @@ class Walkers extends React.Component{
                 <header className="walkers__section">
                     <Nav />
                     {this.state.walkersRegister ? <WalkersRegister /> : null || this.state.listWalkers ? <ListWalkers /> : null}
+                    <ListWalkers walkerList={this.state.walkerList}
+                    />
                     <div className="clients__buttons">
-                        <button onClick={this.showWalkersRegister}>Seja um passeador</button>
-                        <button onClick={this.showListWalkers}>Conheça alguns de nossos passeadores</button>
+                        <button onClick={this.setWalker}>Seja um passeador</button>
+                        <button onClick={this.getWalkers}>Conheça alguns de nossos passeadores</button>
                     </div>
                 </header>
                 <Footer />

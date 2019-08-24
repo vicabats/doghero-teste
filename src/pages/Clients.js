@@ -18,9 +18,21 @@ class Clients extends React.Component{
         }
     }
 
-    showClientRegisterCard = () => {
-        this.setState({clientRegister: !this.state.clientRegister})
-        console.log(this.state.clientRegister)
+    setClient = () => {
+        this.setState({clientRegister: !this.state.clientRegister});
+        axios.post(`http://localhost:8080/api/clients`, {
+            name: '',
+            phone: '',
+            cpf: '',
+            email: '',
+            address: ''   
+        })
+        .then((res) => {
+            console.log(res)
+        })
+        .catch(error => {
+            console.log(error)
+        })
     }
 
     getClients = () => {
@@ -32,7 +44,6 @@ class Clients extends React.Component{
         .catch(error => {
             console.log(error)
         })
-        console.log(this.state.clientList)
     }
 
     render(){
@@ -40,11 +51,11 @@ class Clients extends React.Component{
             <section>
                 <header className="clients__section">
                     <Nav />
+                    {this.state.clientRegister ? <ClientRegister name={this.state.name} cpf={this.state.cpf} address={this.state.address} email={this.state.email} cellphone={this.state.cellphone} /> : null}
                     <ListClients clientList={this.state.clientList}
                     />
-                    {this.state.clientRegister ? <ClientRegister /> : null}
                     <div className="clients__buttons">
-                        <button onClick={this.showClientRegisterCard}>Cadastre-se</button>
+                        <button onClick={this.setClient}>Cadastre-se</button>
                         <button onClick={this.getClients}>Conheça alguns de nossos clientes</button>
                     </div>
                 </header>

@@ -212,6 +212,21 @@ body {
   position: relative;
   top: 20%;
   border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .listclients__section h1 {
@@ -275,7 +290,7 @@ body {
   margin: 20px auto 0 auto;
 }
 
-.listclients__section {
+.listwalkers__section {
   background-color: #fff;
   opacity: 0.9;
   width: 60%;
@@ -283,12 +298,40 @@ body {
   position: relative;
   top: 20%;
   border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.listclients__section h1 {
+.listwalkers__section h1 {
   color: rgba(0, 0, 0, 0.66);
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.list__section {
+  padding: 40px;
+}
+
+.list__section h2 {
+  color: rgba(0, 0, 0, 0.66);
+  margin-bottom: 5px;
+}
+
+.list__section p {
+  font-size: 12px;
 }
 
 .clients__section {

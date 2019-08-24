@@ -3,15 +3,14 @@ import '../../styles/style.css';
 
 
 //Importação do componente de cada cliente
-import List from './List';
+import ListC from './ListC';
 
 const ListClients = ({clientList}) => (
     <section className="listclients__section">
         {clientList.map(list => (
-            <List clientList={list}
+            <ListC clientList={list}
             />
         ))}  
-        {console.log(clientList)}      
     </section>
 )
 

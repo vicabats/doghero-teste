@@ -1,0 +1,11 @@
+.list__section{
+    padding: $padding;
+    
+    h2{
+        color: $title-color;
+        margin-bottom: 5px;
+    }
+    p{
+        font-size: 12px;
+    }
+}
