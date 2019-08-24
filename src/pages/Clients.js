@@ -31,7 +31,7 @@ class Clients extends React.Component{
     }
 
     showForm = () => {
-        this.setState({showForm: true})
+        this.setState({showForm: true, showList: false})
     }
         render(){
         return(

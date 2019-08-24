@@ -13,14 +13,14 @@ class Walkers extends React.Component{
         super()
 
         this.state={
-            walkersRegister: false,
+            showForm: false,
             walkerList: [],
             showList: false,
         }
     }
 
     getWalkers = () => {
-        this.setState({showList: true, walkersRegister: false})
+        this.setState({showList: true, showForm: false})
         axios.get(`http://localhost:8080/api/walkers`)
         .then((res) => {
             this.setState({walkerList: res.data})
@@ -30,21 +30,8 @@ class Walkers extends React.Component{
         })
     }
 
-    setWalker = () => {
-        this.setState({walkersRegister: true, showList: false});
-        axios.post(`http://localhost:8080/api/walkers`, {
-            name: '',
-            phone: '',
-            cpf: '',
-            email: '',
-            address: ''   
-        })
-        .then((res) => {
-            alert("Passeador cadastrado com sucesso!")
-        })
-        .catch(error => {
-            alert("Não foi possível efetuar o cadastro. Tente novamente.")
-        })
+    showForm = () => {
+        this.setState({showForm: true, showList: false});
     }
 
     render(){
@@ -52,12 +39,13 @@ class Walkers extends React.Component{
             <section>
                 <header className="walkers__section">
                     <Nav />
-                    {this.state.walkersRegister ? <WalkersRegister /> : null}
+
+                    {this.state.showForm ? <WalkersRegister name={this.state.name} cpf={this.state.cpf} address={this.state.address} email={this.state.email} phone={this.state.phone} enviar={this.setClient}/> : null}
 
                     {this.state.showList ? <ListWalkers walkerList={this.state.walkerList} /> : null}
 
                     <div className="walkers__buttons">
-                        <button onClick={this.setWalker}>Seja um passeador</button>
+                        <button onClick={this.showForm}>Seja um passeador</button>
                         <button onClick={this.getWalkers}>Conheça alguns de nossos passeadores</button>
                     </div>
                 </header>
