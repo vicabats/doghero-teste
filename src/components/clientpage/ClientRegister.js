@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../styles/style.css';
+import axios from 'axios';
 
 class ClientRegister extends React.Component {
     constructor(){
@@ -10,21 +11,34 @@ class ClientRegister extends React.Component {
             cpf: '',
             address: '',
             email: '',
-            cellphone: '',
+            phone: ''
         }
+        this.setClient = this.setClient.bind(this);
     }
 
     onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
     }
     
-    handleSubmit(e) {
-        e.preventDefault();
-        alert(`O cliente ${this.state.name} foi adicionado ao banco de dados!`)
+    setClient = () => {
+        this.setState({clientRegister: true, showList: false});
+        axios.post(`http://localhost:8080/api/clients`, {
+            name: '',
+            phone: '',
+            cpf: '',
+            email: '',
+            address: ''   
+        })
+        .then((res) => {
+            alert(`O cliente ${this.state.name} foi adicionado ao banco de dados!`)
+        })
+        .catch(error => {
+            alert("Não foi possível cadastrar o cliente. Tente novamente.")
+        })
     }
 
       render() {
-          const {name, cpf, address, email, cellphone} = this.state;
+        const {name, cpf, address, email, cellphone} = this.state;
         return (
         <section className="clientregister__section">
             <div>
@@ -39,7 +53,7 @@ class ClientRegister extends React.Component {
                     <input value={email} name="email" type="email" placeholder="seunome@email.com" required autoFocus onChange={this.onChange}>{this.props.email}</input>
                     <label for="cellphone">Celular:</label>
                     <input value={cellphone} name="cellphone" type="number" placeholder="11 999842398" required autoFocus onChange={this.onChange}>{this.props.cellphone}</input>
-                    <input className="submit-button" type="submit" value="Enviar" onClick={e => this.handleSubmit}></input>
+                    <input className="submit-button" type="submit" name="enviar" value="enviar" onClick={e => this.setClient}></input>
                 </form>
             </div>
         </section>
