@@ -8,7 +8,6 @@ const ListW = ({walkerList}) => (
         <p>CPF: {walkerList.cpf}</p>
         <p>Email: {walkerList.email}</p>
         <p>Endereço: {walkerList.address}</p>
-        <p>Descrição: {walkerList.description}</p>
     </section>
 )
 

@@ -15,22 +15,23 @@ class Walkers extends React.Component{
         this.state={
             walkersRegister: false,
             walkerList: [],
+            showList: false,
         }
     }
 
     getWalkers = () => {
+        this.setState({showList: true, walkersRegister: false})
         axios.get(`http://localhost:8080/api/walkers`)
         .then((res) => {
-            console.log(res.data)
             this.setState({walkerList: res.data})
         })
         .catch(error => {
-            console.log(error)
+            alert("Não foi possível encontrar os passeadores cadastrados na plataforma!")
         })
     }
 
     setWalker = () => {
-        this.setState({walkersRegister: !this.state.walkersRegister});
+        this.setState({walkersRegister: true, showList: false});
         axios.post(`http://localhost:8080/api/walkers`, {
             name: '',
             phone: '',
@@ -39,10 +40,10 @@ class Walkers extends React.Component{
             address: ''   
         })
         .then((res) => {
-            console.log(res)
+            alert("Passeador cadastrado com sucesso!")
         })
         .catch(error => {
-            console.log(error)
+            alert("Não foi possível efetuar o cadastro. Tente novamente.")
         })
     }
 
@@ -51,10 +52,11 @@ class Walkers extends React.Component{
             <section>
                 <header className="walkers__section">
                     <Nav />
-                    {this.state.walkersRegister ? <WalkersRegister /> : null || this.state.listWalkers ? <ListWalkers /> : null}
-                    <ListWalkers walkerList={this.state.walkerList}
-                    />
-                    <div className="clients__buttons">
+                    {this.state.walkersRegister ? <WalkersRegister /> : null}
+
+                    {this.state.showList ? <ListWalkers walkerList={this.state.walkerList} /> : null}
+
+                    <div className="walkers__buttons">
                         <button onClick={this.setWalker}>Seja um passeador</button>
                         <button onClick={this.getWalkers}>Conheça alguns de nossos passeadores</button>
                     </div>

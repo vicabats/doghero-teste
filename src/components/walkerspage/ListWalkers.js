@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../styles/style.css';
 
-
 //Importação do componente de cada cliente
 import ListW from './ListW';
 

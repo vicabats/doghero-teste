@@ -8,10 +8,4 @@
     border-radius: 20px;
     @include flex(space-evenly, row);
     flex-wrap: wrap;
-
-    h1{
-        color: $title-color;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
 }
