@@ -21,19 +21,12 @@ class WalkersRegister extends React.Component {
         this.setState({ [e.target.name]: e.target.value });
     }
 
-    setWalker(e) {
+    setWalker = (e) => {
         console.log("chamando setwalker")
         e.preventDefault();
-        axios.post(`http://localhost:8080/api/walkers`, {
-            name: '',
-            phone: '',
-            cpf: '',
-            email: '',
-            address: ''   
-        })
+        axios.post(`http://localhost:8080/api/walkers`, this.state)
         .then((res) => {
             alert(`O passeador ${this.state.name} foi adicionado ao banco de dados!`)
-            console.log(res)
         })
         .catch(error => {
             alert("Não foi possível cadastrar o passeador. Tente novamente.")
@@ -41,7 +34,7 @@ class WalkersRegister extends React.Component {
     }
 
     render() {
-        const { name, cpf, address, email, cellphone } = this.state;
+        const { name, cpf, address, email, phone } = this.state;
         return (
             <section className="clientregister__section">
                 <div>
@@ -54,9 +47,9 @@ class WalkersRegister extends React.Component {
                         <input value={address} name="address" type="text" placeholder="Av. Paulista, 1.000, apto 24" required autoFocus onChange={this.onChange}>{this.props.address}</input>
                         <label htmlFor="email">Email:</label>
                         <input value={email} name="email" type="email" placeholder="seunome@email.com" required autoFocus onChange={this.onChange}>{this.props.email}</input>
-                        <label htmlFor="cellphone">Celular:</label>
-                        <input value={cellphone} name="cellphone" type="number" placeholder="11 999842398" required autoFocus onChange={this.onChange}>{this.props.cellphone}</input>
-                        <input className="submit-button" type="submit" value="Enviar" onClick={e => this.setWalker}></input>
+                        <label htmlFor="phone">Celular:</label>
+                        <input value={phone} name="phone" type="number" placeholder="11 999842398" required autoFocus onChange={this.onChange}>{this.props.phone}</input>
+                        <input className="submit-button" type="submit" value="Enviar" onClick={this.setWalker}></input>
                     </form>
                 </div>
             </section>

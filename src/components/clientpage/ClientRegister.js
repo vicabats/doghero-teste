@@ -22,16 +22,9 @@ class ClientRegister extends React.Component {
     
     setClient = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:8080/api/clients`, {
-            name: '',
-            phone: '',
-            cpf: '',
-            email: '',
-            address: ''   
-        })
+        axios.post(`http://localhost:8080/api/clients`, this.state)
         .then((res) => {
             alert(`O cliente ${this.state.name} foi adicionado ao banco de dados!`)
-            console.log(res.data)
         })
         .catch(error => {
             alert("Não foi possível cadastrar o cliente. Tente novamente.")
@@ -39,7 +32,7 @@ class ClientRegister extends React.Component {
     }
 
       render() {
-        const {name, cpf, address, email, cellphone} = this.state;
+        const {name, cpf, address, email, phone} = this.state;
         return (
         <section className="clientregister__section">
             <div>
@@ -52,8 +45,8 @@ class ClientRegister extends React.Component {
                     <input value={address} name="address" type="text" placeholder="Av. Paulista, 1.000, apto 24" required autoFocus onChange={this.onChange}>{this.props.address}</input>
                     <label htmlFor="email">Email:</label>
                     <input value={email} name="email" type="email" placeholder="seunome@email.com" required autoFocus onChange={this.onChange}>{this.props.email}</input>
-                    <label htmlFor="cellphone">Celular:</label>
-                    <input value={cellphone} name="cellphone" type="number" placeholder="11 999842398" required autoFocus onChange={this.onChange}>{this.props.cellphone}</input>
+                    <label htmlFor="phone">Celular:</label>
+                    <input value={phone} name="phone" type="number" placeholder="11 999842398" required autoFocus onChange={this.onChange}>{this.props.phone}</input>
                     <input className="submit-button" type="submit" name="enviar" value="enviar" onClick={this.setClient}></input>
                 </form>
             </div>
